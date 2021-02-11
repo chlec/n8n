@@ -498,6 +498,14 @@ export interface INodeType {
 	};
 }
 
+export interface INodeVersionedType {
+	nodeVersions: {
+		[key: number]: INodeType
+	};
+	defaultVersion: number;
+	getNodeType: (version?: number) => INodeType;
+}
+
 export type WebhookSetupMethodNames = 'checkExists' | 'create' | 'delete';
 
 
@@ -632,7 +640,7 @@ export interface INodeTypes {
 
 export interface INodeTypeData {
 	[key: string]: {
-		type: INodeType;
+		type: INodeType | INodeVersionedType;
 		sourcePath: string;
 	};
 }

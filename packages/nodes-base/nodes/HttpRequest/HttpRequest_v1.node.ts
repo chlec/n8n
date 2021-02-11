@@ -22,9 +22,9 @@ interface OptionDataParamters {
 }
 
 
-export class HttpRequest implements INodeType {
+export class HttpRequestV1 implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'HTTP Request',
+		displayName: 'HTTP Request V1',
 		name: 'httpRequest',
 		icon: 'fa:at',
 		group: ['input'],
